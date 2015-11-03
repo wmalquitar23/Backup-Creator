@@ -20,7 +20,7 @@ namespace Backup_Creator
         OleDbCommand maincommand;
         OleDbConnection mainConnection;
         OleDbDataReader mainReader;
-
+        //Connection String Comment -earlsan
         private static string connectionString;
         private static string OleDBProvider = "Microsoft.ACE.OLEDB.12.0";
         private static string OleDBDataSource = Application.StartupPath + @"\\db_backup.accdb";
@@ -39,7 +39,7 @@ namespace Backup_Creator
             //CopyFile(new FileInfo(@"C:\Spectral\test.xls"), "test_asdasd.xls", false);
             //this.ZipFile(new FileInfo(@"C:\Spectral\test.xls"), @"C:\Spectral\test.zip");
             //CopyFolder(new DirectoryInfo(@"C:\Spectral\DB"), @"C:\Spectral\DB_BAK", false);
-            //BackupFolder(new DirectoryInfo(@"C:\Spectral\DB"), @"C:\Spectral\DB_BAK"); 
+            //BackupFolder(new DirectoryInfo(@"C:\Spectral\DB"), @"C:\Spectral\DB_BAK");
             //ZipFolder(new DirectoryInfo(@"C:\Spectral\DB"), @"C:\Spectral\DB.zip");
         }
         private bool CompressFile(string fileToBeCompressed, string zipFileName)
@@ -67,11 +67,11 @@ namespace Backup_Creator
             if (filesToBackup.Count <= 0) return;
             for (int i = 0; i < filesToBackup.Count; i++)
             {
-                if (filesToBackup[i].GetScheduleDays().Contains(GetCurrentDayAbbreviated()) && 
-                    filesToBackup[i].GetIncludeInRun().Equals("YES") && 
+                if (filesToBackup[i].GetScheduleDays().Contains(GetCurrentDayAbbreviated()) &&
+                    filesToBackup[i].GetIncludeInRun().Equals("YES") &&
                     filesToBackup[i].GetScheduleTime().Equals(DateTime.Now.ToShortTimeString())){
-                    
-                    //If it is time to run the backup. 
+
+                    //If it is time to run the backup.
                     FileBackupDetails file = filesToBackup[i];
                     if (file.GetIsFile().Equals("YES")) //For files.
                     {
@@ -124,7 +124,7 @@ namespace Backup_Creator
 
         private string GenerateFileNameFormat(string originalFileName, string fileNameFormat, bool overwriteIfExists, bool isFolder)
         {
-            //File formats. 
+            //File formats.
             //FILENAME_YYYYDDMM_HHMMSS
             //FILENAME_YYYYDDMM
 
@@ -132,9 +132,9 @@ namespace Backup_Creator
             string extension = (indexOfPeriod < 0 ? "" : originalFileName.Substring(indexOfPeriod)); //Get the file extension name.
             string fileName = originalFileName.Split(new char[] { '.' })[0].ToString(); //Get the file name without the extension name.
 
-            string generatedFileName = ""; //The return file name. 
+            string generatedFileName = ""; //The return file name.
 
-            if (overwriteIfExists) 
+            if (overwriteIfExists)
                 generatedFileName = fileName;
             else
             {
@@ -238,7 +238,7 @@ namespace Backup_Creator
             finally
             {
                 if (mainConnection.State == System.Data.ConnectionState.Open)
-                    mainConnection.Close();             
+                    mainConnection.Close();
             }
         }
         private string GetDays()
@@ -300,10 +300,10 @@ namespace Backup_Creator
         {
             string insertQuery = "INSERT INTO tblBackupFiles(file_remarks, isfile, source_file_name, destination_folder, "+
                                  "isscheduled, schedule_time, schedule_days, overwrite_if_exists, filename_format, is_zip_file, include_in_run) " +
-                                 "VALUES ('" + txtFileRemarks.Text + "'," + chkFile.Checked + ",'" + txtSourceFile.Text + "','" + txtDestinationFolder.Text + "'," + 
-                                 "" + ckScheduled.Checked + ",'" + dtBackupTime.Value.ToShortTimeString() + "','" + GetDays() + "'," + 
+                                 "VALUES ('" + txtFileRemarks.Text + "'," + chkFile.Checked + ",'" + txtSourceFile.Text + "','" + txtDestinationFolder.Text + "'," +
+                                 "" + ckScheduled.Checked + ",'" + dtBackupTime.Value.ToShortTimeString() + "','" + GetDays() + "'," +
                                  "" + chkOverwrite.Checked + ",'" + cmbFileFomat.Text + "'," + chkCompressFile.Checked + "," + chkIncludeInRun.Checked + "  ) ";
-             
+
             DialogResult result = MessageBox.Show("Proceed in saving the new backup file?", "Save Backup File", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
@@ -349,7 +349,7 @@ namespace Backup_Creator
                     UpdateBackupDetails();
                 else
                     SaveBackupDetails();
-            }   
+            }
             else
             {
                 MessageBox.Show("There is a problem saving the backup file. You either ticked 'File' but the source file is not a valid file " + Environment.NewLine +
@@ -362,7 +362,7 @@ namespace Backup_Creator
                 txtSourceFile.Text = GetFileName();
             else
                 txtSourceFile.Text = GetFolderLocations();
-            
+
         }
         private bool IsPathDirectory(string path)
         {
@@ -381,7 +381,7 @@ namespace Backup_Creator
             if ((fileInfo.Exists) && (Path.GetExtension(@path).Length != 0))
                 return true;
 
-            return false;       
+            return false;
         }
         private string GetFileName()
         {
@@ -569,7 +569,7 @@ namespace Backup_Creator
             }
             catch (Exception e)
             {
-                //Logging for error. 
+                //Logging for error.
             }
             finally
             {
@@ -584,7 +584,7 @@ namespace Backup_Creator
             }
             catch (Exception e)
             {
-                //Logging for error. 
+                //Logging for error.
             }
             finally
             {
@@ -599,7 +599,7 @@ namespace Backup_Creator
             }
             catch (Exception e)
             {
-                //Logging for possible errors. 
+                //Logging for possible errors.
             }
             finally
             {
