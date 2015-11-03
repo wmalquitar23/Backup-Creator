@@ -1,0 +1,16 @@
+C:\Users\DeveloperOne\Documents\PetProjects\Backup Creator\Backup Creator\obj\x86\Debug\Backup_Creator.frmMainForm.resources
+C:\Users\DeveloperOne\Documents\PetProjects\Backup Creator\Backup Creator\obj\x86\Debug\Backup_Creator.Properties.Resources.resources
+C:\Users\DeveloperOne\Documents\PetProjects\Backup Creator\Backup Creator\bin\Debug\Backup Creator.exe
+C:\Users\DeveloperOne\Documents\PetProjects\Backup Creator\Backup Creator\bin\Debug\Backup Creator.pdb
+C:\Users\DeveloperOne\Documents\PetProjects\Backup Creator\Backup Creator\obj\x86\Debug\Backup Creator.exe
+C:\Users\DeveloperOne\Documents\PetProjects\Backup Creator\Backup Creator\obj\x86\Debug\Backup Creator.pdb
+C:\Users\DeveloperOne\Documents\PetProjects\Backup Creator\Backup Creator\obj\x86\Debug\Backup Creator.csproj.GenerateResource.Cache
+C:\Users\DeveloperOne\Documents\PetProjects\Backup Creator\Backup Creator\obj\x86\Debug\Backup Creator.csprojResolveAssemblyReference.cache
+E:\Backup Creator\Backup Creator\obj\x86\Debug\Backup Creator.exe
+E:\Backup Creator\Backup Creator\obj\x86\Debug\Backup Creator.pdb
+E:\Backup Creator\Backup Creator\bin\Debug\Backup Creator.exe
+E:\Backup Creator\Backup Creator\bin\Debug\Backup Creator.pdb
+E:\Backup Creator\Backup Creator\obj\x86\Debug\Backup Creator.csprojResolveAssemblyReference.cache
+E:\Backup Creator\Backup Creator\obj\x86\Debug\Backup_Creator.frmMainForm.resources
+E:\Backup Creator\Backup Creator\obj\x86\Debug\Backup_Creator.Properties.Resources.resources
+E:\Backup Creator\Backup Creator\obj\x86\Debug\Backup Creator.csproj.GenerateResource.Cache
